@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="AcademicAssistanceProject.CourseRatingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <TextBlock Text="Course Ratingszzzzzzzzzzzzzzzzz" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10"/>
+
+        <ListBox x:Name="CourseListBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding CourseName}" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <TextBlock Text="Rating: " FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Rating, StringFormat='F1'}"/>
+                        </StackPanel>
+                        <Slider Value="{Binding Rating, Mode=TwoWay}" Minimum="0" Maximum="5" TickFrequency="0.5"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
